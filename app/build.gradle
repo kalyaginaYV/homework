@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+
+        classpath group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
+    }
+}
+plugins {
+    id 'java'
+}
+group 'ru.otus'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.1'
+    implementation 'com.google.guava:guava:30.0-jre'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
+}
