@@ -1,6 +1,6 @@
 package kalyagina.hw1;
 
-public class Duck extends Animal {
+public class Duck extends Animal implements Flying{
     @Override
     public void say() {
         System.out.println("Кря");
