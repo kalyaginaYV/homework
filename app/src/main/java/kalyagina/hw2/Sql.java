@@ -15,6 +15,10 @@ public class Sql {
     private static final String USER = "root";
     private static final String PASSWORD = "12345678";
 
+    private static final String CREATE_CURATOR_TABLE_SQL =
+            "CREATE TABLE Curator(id int auto_increment primary key, " +
+                    "fio varchar(30))";
+
     private static final String CREATE_GROUP_TABLE_SQL =
             "CREATE TABLE Groupp(id int auto_increment primary key, " + // Groupp с двумя "p", т.к. MySQL не понимает "Group
                     "name varchar(50), " +
@@ -28,9 +32,6 @@ public class Sql {
                     "id_group int, " +
                     "FOREIGN KEY(id_group) REFERENCES Groupp(id))";
 
-    private final String CREATE_CURATOR_TABLE_SQL =
-            "CREATE TABLE Curator(id int auto_increment primary key, " +
-                    "fio varchar(30))";
 
     private static final String INSERT_INTO_CURATOR =
             "INSERT INTO Curator(fio) VALUES(?)";
@@ -150,6 +151,7 @@ public class Sql {
             System.out.println("Inserted rows number: " + insertedRowsNumber);
         }
     }
+
 
     public void printAllStudents(Connection connection) throws SQLException {
         try (Statement statement = connection.createStatement();
